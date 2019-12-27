@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+        body{
+	background-color: powderblue;
+}
+.name p{
+	font-size: 30px
+}
+.facebook a{
+	margin-left: 35%;
+	/*border: 1px solid black;
+	outline-color: yellow;
+	outline-style: outset;
+	font-size: 30px;
+	color: red;
+	background-color: white;*/
+}
+#login{
+	position: relative;
+	margin: 5% auto;
+	height: 400px;
+	background: #fff;
+	width: 600px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0.6);
+}
+.login-box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 300px;
+	height: 400px;
+
+}
+
+
+.id{	
+	font-size: 30px;
+}
+.h1{
+	margin:0 0 20px 0;
+	font-weight: 300;
+	font-size: 28px; 
+	color: red;
+	margin-left: 35%;
+}
+input[type="text"],
+input[type='password']
+{
+	display: block;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding: 4px;
+	width: 220px;
+	height: 32px;
+	border :none;
+	outline: none;
+	border-bottom: 1px solid #aaa;
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 400;
+	transition: 0.2 ease;
+
+}
+input[type="submit"]
+{
+	margin-bottom: 28px;
+	width:120px;
+	height: 32px;
+	background: #f44336;
+	border :none;
+	border-radius: 2px;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: 0.2s ease;
+	cursor: pointer;
+
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus
+{
+	background: #ff5722;
+	transition: 0.2s ease;
+
+}
+.right-box
+{ position: absolute;
+	top:0;
+	right: 0;
+	box-sizing: border-box;
+	width: 300px;
+	height: 400px;
+	background-image: url("https://cdn.glitch.com/95a1b1bf-6b14-4fa0-87f5-d2dd45905627%2Fn13-768x768.jpg?v=1566277490259");
+	background-size:cover;
+	background-position: center;
+
+
+}
+
+
+.img img{
+	width: 400px;
+}
+.img{
+	margin-left:  35%;
+}
+
+.or{
+	position: absolute;
+	top: 188px;
+	left: 280px;
+	height: 40px;
+	background: #efefef;
+	border-radius: 50%;
+	box-shadow:0 2px 4px rgba(0, 0, 0, 0.6);
+	line-height: 40px;
+	text-align: center;
+}
+
+.right-box .signwith
+{
+	display: block;
+	margin-bottom: 40px;
+	font-size: 28px;
+	color: #fff;
+	text-align: center;
+	text-shadow:0 2px 4px rgba(0, 0, 0, 0.6);
+
+}
+.loginbutton
+{
+
+}
+
+button.social
+{
+	margin-bottom: 20px;
+	width: 220px;
+	height: 36px;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: 500;
+	transition: 0.2 ease;
+	cursor: pointer;
+}
+
+.facebook
+{
+	background: #32508e;
+
+}
+.twitter
+{
+	background: #55acee;
+}
+.google
+{
+	background: #dd4b39;
+}
+
+
+
+  </style>
+    <title>my project</title>
+    <link rel="stylesheet" type="text/css" href="./user.css">
+</head>
+<body background="https://cdn.glitch.com/95a1b1bf-6b14-4fa0-87f5-d2dd45905627%2FWinter-Screen-Wallpapers-001.jpg?v=1566277596331">
+ 
+    <div id="login">
+     <div class="left-box">
+		<h1 class="h1">sign up</h1>
+		<form action="http://localhost:8000/add" method="post" >
+		<input type="text" name="name" placeholder="usename" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="password" required>
+		<input type="submit" name="signup-button" value="sign up" required>
+	</form>
+     </div>
+     <div class="right-box"> 
+	<span class="signwith">sing in with <br/>social networ</span>
+	<form action="http://localhost:8000/auth/google" method="GET" >
+        <!-- <button class=" login">login </form>login </button> 
+        <button class=" social twitter">log in with twiter</button> --> -->
+		<button class=" social google">log in with google</button>
+	</form>	
+	<div class="loginbutton" >
+		<form action="/home/ajay/Documents/google/route/template/login.html">
+			<button type="submit">
+				login
+			</button>
+		 </form>
+	</div>
+	
+     </div>
+     <div class="or">OR</div>
+	
+    </div>
+</body>
+</html>loginbutton

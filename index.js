@@ -63,8 +63,7 @@ require('./cloud')(cloud,cloudinary)
 app.use('/',login=express.Router());
 require('./route/login')(login,upload,cloudinary)
 
-// app.use('/',express=express.Router());
-// require('./models/mysql')(express)
+
 
 app.listen(8000,()=>{
     console.log('running....');

@@ -1,7 +1,6 @@
 const path = require('path')
 var bodyParser = require("body-parser");
 var knex=require('../models/mysql')
-var jwt = require('jsonwebtoken');
 module.exports = (app,upload,cloudinary) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   
@@ -26,10 +25,7 @@ module.exports = (app,upload,cloudinary) => {
   });
   
   app.post('/auth',(req,res)=>{
-        // res.send(req.body)
         var name = req.body.username
-
-
         knex
         .select('*').from('user').where('user.email',req.body.username)
         .then((data)=>{
@@ -68,13 +64,6 @@ module.exports = (app,upload,cloudinary) => {
     })
   
     app.post('/myaction',upload.single('image'),async(req,res)=>{
-      // console.log(req.body.name);
-      
-      var token=req.headers.cookie.split(" ")
-      token=token[token.length-1].slice(0,-10)
-      jwt.verify(token,'aadil',(err,auth_data)=>{
-        if (!err){
-          // console.log(auth_data);
           cloudinary.v2.uploader.upload(req.file.path, 
             function(error, result) {
               if (!error){
@@ -90,17 +79,10 @@ module.exports = (app,upload,cloudinary) => {
                 res.send(error)
               }
         })
-        }
-        else{
-          res.send(err)
-        }
-      })
     })
+
+
     app.get('/image',(req,res)=>{
-      var token=req.headers.cookie.split(" ")
-      token=token[token.length-1].slice(0,-10)
-      jwt.verify(token,'aadil',(err,auth_data)=>{
-        // res.send(auth_data.name)
         knex('image')
         .select('user_url')
         .where('name',auth_data.name)
@@ -110,9 +92,6 @@ module.exports = (app,upload,cloudinary) => {
           .catch((err)=>{
             res.send(err)
           })
-        })
-        
-      
     })
 }
 
